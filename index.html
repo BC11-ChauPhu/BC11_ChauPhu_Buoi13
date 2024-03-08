@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC11_Châu_Phú</title>
+
+    <style>
+        .row1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+
+        .row2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container row1">
+
+        <div class="card mb-5" style="width: 18rem;">
+            <h2 class="mx-auto">Bài 1</h2>
+            <div class="card-header text-white bg-dark text-center">
+                Tính tiền lương nhân viên
+            </div>
+            <div class="card-body">
+                <form>
+                    <p>Số ngày làm:</p>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputNgayLam" placeholder="Số ngày làm">
+                    </div>
+                    <button onclick="tinhTienLuong()" type="button" class="btn btn-danger" id="btnCalc">Tính</button>
+                    <p id="resultTienLuong" class="alert alert-danger mt-3">Tiền Lương:</p>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-5" style="width: 18rem;">
+            <h2 class="mx-auto">Bài 2</h2>
+            <div class="card-header text-white bg-dark text-center">
+                Tính giá trị trung bình
+            </div>
+            <div class="card-body">
+                <form>
+                    <p>Nhập 5 số ngẫu nhiên:</p>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputNum1" placeholder="Số 1">
+                        <input type="number" class="form-control" id="inputNum2" placeholder="Số 2">
+                        <input type="number" class="form-control" id="inputNum3" placeholder="Số 3">
+                        <input type="number" class="form-control" id="inputNum4" placeholder="Số 4">
+                        <input type="number" class="form-control" id="inputNum5" placeholder="Số 5">
+                    </div>
+                    <button onclick="tinhTrungBinh()" type="button" class="btn btn-danger" id="btnCalc">Tính</button>
+                    <p id="resultAvg" class="alert alert-danger mt-3">Giá trị trung bình:</p>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-5" style="width: 18rem;">
+            <h2 class="mx-auto">Bài 3</h2>
+            <div class="card-header text-white bg-dark text-center">
+                Quy đổi từ USD sang VND
+            </div>
+            <div class="card-body">
+                <form>
+                    <p>Nhập USD:</p>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputUSD" placeholder="USD">
+                    </div>
+                    <button onclick="quyDoiTien()" type="button" class="btn btn-danger" id="btnCalc">Quy đổi</button>
+                    <p id="resultExchange" class="alert alert-danger mt-3">VND:</p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container row2">
+        <div class="card mb-5 mx-auto" style="width: 18rem;">
+            <h2 class="mx-auto">Bài 4</h2>
+            <div class="card-header text-white bg-dark text-center">
+                Tính diện tích, chu vi hình chữ nhật
+            </div>
+            <div class="card-body">
+                <form>
+                    <p>Nhập chiều dài:</p>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputChieuDai" placeholder="Chiều dài">
+                    </div>
+
+                    <p>Nhập chiều rộng:</p>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputChieuRong" placeholder="Chiều rộng">
+                    </div>
+
+                    <button onclick="tinhHCN()" type="button" class="btn btn-danger" id="btnCalc">Tính
+                    </button>
+                    <p id="calcRectangle" class="alert alert-danger mt-3"></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-5 mx-auto" style="width: 18rem;">
+            <h2 class="mx-auto">Bài 5</h2>
+            <div class="card-header text-white bg-dark text-center">
+                Tính tổng 2 ký số
+            </div>
+            <div class="card-body">
+                <form>
+                    <p>Nhập số:</p>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputNumber">
+                    </div>
+                    <button onclick="tinhKySo()" type="button" class="btn btn-danger" id="btnCalc">Tính</button>
+                    <p id="resultKySo" class="alert alert-danger mt-3">Kết quả:</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
